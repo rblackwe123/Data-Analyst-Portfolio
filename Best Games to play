@@ -1,0 +1,32 @@
+SELECT  *
+FROM `project-1-342920.games_features.Game-feature` 
+
+-- order from best ratings on Metacritic to worst
+
+SELECT  ResponseName, Metacritic
+FROM `project-1-342920.games_features.Game-feature` 
+Order by Metacritic DESC
+
+-- Looking at RecommendationCount
+
+SELECT  ResponseName, Metacritic, RecommendationCount 
+FROM `project-1-342920.games_features.Game-feature` 
+order by RecommendationCount DESC
+
+-- Top rated games above the score of 70 according to Metacritic & RecommendationCount
+
+SELECT  ResponseName, Metacritic, RecommendationCount
+FROM `project-1-342920.games_features.Game-feature`
+where Metacritic >= 70
+order by Metacritic desc
+
+SELECT  ResponseName, Metacritic, RecommendationCount
+FROM `project-1-342920.games_features.Game-feature`
+where Metacritic >= 70
+order by RecommendationCount desc
+
+-- Best recommended games with the best prices
+
+SELECT  ResponseName, RecommendationCount,PriceFinal 
+FROM `project-1-342920.games_features.Game-feature`
+order by RecommendationCount desc
